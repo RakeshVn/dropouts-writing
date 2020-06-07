@@ -6,8 +6,8 @@
         <div class="overlay"></div>
         <div class="container-fluid px-0">
             <div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
-                <img class="one-third js-fullheight align-self-end order-md-last img-fluid" src="/assets/images/homepage.png"
-                    alt="">
+                <img class="one-third js-fullheight align-self-end order-md-last img-fluid"
+                    src="/assets/images/homepage.png" alt="">
                 <div class="one-forth d-flex align-items-center  js-fullheight">
                     <div class="text mt-5">
                         <h1>DROPOUTS WRITING</h1>
@@ -366,7 +366,9 @@
                 <div class="col-md d-flex justify-content-center counter-wrap ">
                     <div class="block-18 bg-light">
                         <div class="text">
-                            <strong class="number plus-suffix" data-number="5"></strong>
+                            <strong class="number plus-suffix" counto [step]="30" [countTo]="5" [countFrom]="0"
+                                [duration]="4"
+                                (countoChange)="counters.a = $event">{{counters.a|number:'1.0-0'}}</strong>
                             <span>Years Industry Experience</span>
                         </div>
                     </div>
@@ -374,7 +376,9 @@
                 <div class="col-md d-flex justify-content-center counter-wrap ">
                     <div class="block-18 bg-light">
                         <div class="text">
-                            <strong class="number plus-suffix" data-number="15000"></strong>
+                            <strong class="number plus-suffix" counto [step]="30" [countTo]="15000" [countFrom]="0"
+                                [duration]="4"
+                                (countoChange)="counters.b = $event">{{counters.b|number:'1.0-0'}}</strong>
                             <span>Written Pieces</span>
                         </div>
                     </div>
@@ -382,7 +386,9 @@
                 <div class="col-md d-flex justify-content-center counter-wrap ">
                     <div class="block-18 bg-light">
                         <div class="text">
-                            <strong class="number plus-suffix" data-number="4800000"></strong>
+                            <strong class="number plus-suffix" counto [step]="30" [countTo]="4800000" [countFrom]="0"
+                                [duration]="4"
+                                (countoChange)="counters.c = $event">{{counters.c|number:'1.0-0'}}</strong>
                             <span>Words written</span>
                         </div>
                     </div>
@@ -591,8 +597,8 @@
                 <div class="col-md-12 col-lg-12">
                     <div class="page bg-light one">
                         <h2 class="mb-4">Queries</h2>
-                        <form #queryFormData="ngForm" (submit)="onSubmit('query',queryFormData.value)" class="contact-form"
-                            id="query-form">
+                        <form #queryFormData="ngForm" (submit)="onSubmit('query',queryFormData.value)"
+                            class="contact-form" id="query-form">
                             <div class="form-group">
                                 <input type="text" class="form-control" name="name" placeholder="Name" ngModel>
                             </div>

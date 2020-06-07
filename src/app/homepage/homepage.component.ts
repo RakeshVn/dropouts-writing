@@ -8,6 +8,12 @@ import { CommonService } from '../services/common.service';
 })
 export class HomepageComponent implements OnInit {
 
+  counto = 0
+  counters = {
+    a: 5,
+    b: 15000,
+    c: 4800000
+  }
   constructor(
     private _CommonService: CommonService
   ) { }

@@ -18,6 +18,7 @@ import { QueryDetailsComponent } from './components/query-details/query-details.
 import { BlogsComponent } from './blogs/blogs.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { CountoModule } from 'angular2-counto';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     FormsModule,
     HttpClientModule,
     OwlModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    CountoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
