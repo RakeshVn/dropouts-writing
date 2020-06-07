@@ -29,8 +29,10 @@ export class HomepageComponent implements OnInit {
     })
   }
 
-  onService() {
-    $(".collapse.show").collapse('hide')
+  onService(service: HTMLElement) {
+    setTimeout(() => {
+      service.scrollIntoView({ behavior: "smooth" });
+    }, 200);
   }
 
 }
