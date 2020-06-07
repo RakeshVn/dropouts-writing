@@ -9,7 +9,7 @@ export class ClinteleComponent implements OnInit {
 
   slides = ['partner-1.png', 'partner-2.png', 'partner-3.png', 'partner-4.png', 'partner-5.png'];
   slideConfig = {
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 2000,
     infinite: true,
     slidesToShow: 4,
