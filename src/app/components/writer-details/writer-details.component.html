@@ -1,0 +1,82 @@
+<section class="ftco-section ftco-no-pb ftco-partner">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h2>Writer Apply Details</h2>
+                <div class="card">
+                    <div class="table-responsive">
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Mobile</th>
+                                    <th scope="col">DOB</th>
+                                    <th scope="col">Introduction</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Favorite Book</th>
+                                    <th scope="col">Company Name</th>
+                                    <th scope="col">Professional Postion</th>
+                                    <th scope="col">Professional Experience</th>
+                                    <th scope="col">Why do you write</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of eventsData">
+                                    <th scope="row"> {{item.name}} </th>
+                                    <td> {{item.email}} </td>
+                                    <td> {{item.mobile}} </td>
+                                    <td> {{item.dob}} </td>
+                                    <td> {{item.introduction}} </td>
+                                    <td> {{item.address}} </td>
+                                    <td> {{item.favoriteBook}} </td>
+                                    <td> {{item.companyName}} </td>
+                                    <td> {{item.position}} </td>
+                                    <td> {{item.professionExperience}} </td>
+                                    <td> {{item.q1}} </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="card-footer py-4">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-end">
+                                    <li class="page-item">
+                                        <a class="page-link" href="javascript:void(0)" (click)="onPageChange('prev')">
+                                            <i class="fa fa-angle-left"></i>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item" [ngClass]="{'active' : page==i}" *ngFor="let i of totalPages">
+                                        <a class="page-link" href="javascript:void(0)" (click)="onPageChange(i)">
+                                            {{i}}
+                                        </a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="javascript:void(0)" (click)="onPageChange('next')">
+                                            <i class="fa fa-angle-right"></i>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="col-md-4">
+    <ng-template #image let-c="close" let-d="dismiss">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="d('Cross click')">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <img class="idCard" [src]="viewImage">
+            </div>
+        </div>
+    </ng-template>
+</div>
