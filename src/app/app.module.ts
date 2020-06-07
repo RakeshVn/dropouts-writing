@@ -16,6 +16,8 @@ import { AuditDetailsComponent } from './components/audit-details/audit-details.
 import { WriterDetailsComponent } from './components/writer-details/writer-details.component';
 import { QueryDetailsComponent } from './components/query-details/query-details.component';
 import { BlogsComponent } from './blogs/blogs.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { BlogsComponent } from './blogs/blogs.component';
     AuditDetailsComponent,
     WriterDetailsComponent,
     QueryDetailsComponent,
-    BlogsComponent
+    BlogsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { BlogsComponent } from './blogs/blogs.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    OwlModule
+    OwlModule,
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

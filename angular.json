@@ -29,8 +29,11 @@
               "src/assets/css/owl.carousel.min.css",
               "src/assets/css/owl.theme.default.min.css",
               "src/assets/css/magnific-popup.css",
-              "src/assets/css/flaticon.css",
-              "src/assets/css/style.css"
+              "src/assets/css/style.css",
+              "src/assets/font-awesome/css/font-awesome.css",
+              "src/assets/fonts/marketing/font/flaticon.css",
+              "node_modules/slick-carousel/slick/slick.scss",
+              "node_modules/slick-carousel/slick/slick-theme.scss"
             ],
             "scripts": [
               "src/assets/js/jquery.min.js",
@@ -46,6 +49,8 @@
               "src/assets/js/scrollax.min.js",
               "src/assets/js/slick.js",
               "src/assets/js/main.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/slick-carousel/slick/slick.min.js"
             ]
           },
           "configurations": {

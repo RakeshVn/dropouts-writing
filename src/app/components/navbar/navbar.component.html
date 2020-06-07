@@ -16,9 +16,22 @@
                 <li class="nav-item"><a href="#aboutus-section" class="nav-link"><span>About Us</span></a></li>
                 <li class="nav-item"><a href="#philosophy-section" class="nav-link"><span>Our Philosophy</span></a>
                 </li>
-                <li class="nav-item"><a href="blog.html" class="nav-link" target="_blank"><span>Our Blog</span></a>
+                <li class="nav-item"><a routerLink="blog" class="nav-link" target="_blank"><span>Our Blog</span></a>
                 </li>
                 <li class="nav-item"><a href="#footer-section" class="nav-link"><span>Contact</span></a></li>
+                <li class="nav-item">
+                    <div ngbDropdown class="d-inline-block">
+                        <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle style="color: #000000;">
+                            <i class="fa fa-user"></i>
+                        </a>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                            <button *ngIf="isLoggedIn" ngbDropdownItem routerLink="/events">Events</button>
+                            <button *ngIf="isLoggedIn" ngbDropdownItem routerLink="./"
+                                (click)="onLogout()">Logout</button>
+                            <button *ngIf="!isLoggedIn" ngbDropdownItem routerLink="/login">Login</button>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>

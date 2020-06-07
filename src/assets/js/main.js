@@ -69,7 +69,7 @@
 		});
 
 	};
-	fullHeight();
+	// fullHeight();
 
 	// loader
 	var loader = function () {

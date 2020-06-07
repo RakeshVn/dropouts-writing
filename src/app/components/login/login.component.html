@@ -10,19 +10,17 @@
         <span></span>
     </div>
     <div class="main-container">
-        <div class="card bg-secondary shadow border-0">
+        <div class="card shadow border-0">
             <div class="card-body px-lg-5 py-lg-5">
                 <div class="text-center text-muted mb-4">
-                    <h4 style="font-family: 'dillova';text-transform: none;font-size: 36px;font-weight: normal;">
-                        evento..
-                    </h4>
+                    <img src="/assets/images/logo.png" style="width: 6rem;">
                 </div>
                 <form role="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                     <div class="form-group mb-3">
                         <div class="input-group input-group-alternative"
                             [ngClass]="{'has-danger':isSubmitted && loginForm.controls.email.errors}">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                <span class="input-group-text"><i class="fa fa-email"></i></span>
                             </div>
                             <input class="form-control" formControlName="email" placeholder="Email" type="email">
                         </div>

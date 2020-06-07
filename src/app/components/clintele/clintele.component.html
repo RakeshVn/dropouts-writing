@@ -9,7 +9,16 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="brands_slider_container">
+                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                        <div class="brands_item">
+                            <img src="assets/images/partners/{{slide}}">
+                        </div>
+                    </div>
+                </ngx-slick-carousel>
+                <!-- <div class='nav-btn next-slide'></div>
+                <div class='nav-btn prev-slide'></div> -->
+                <!-- <div class="brands_slider_container">
                     <div class="owl-carousel owl-theme brands_slider" style="  display: flex !important;
 						align-content: center;
 						padding-left: 0.5rem;
@@ -35,7 +44,7 @@
                     </div>
                     <div class="brands_nav brands_prev"><i class="fa fa-chevron-left"></i></div>
                     <div class="brands_nav brands_next"><i class="fa fa-chevron-right"></i></div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
