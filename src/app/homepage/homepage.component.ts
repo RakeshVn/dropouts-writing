@@ -8,9 +8,6 @@ declare const $: any
 })
 export class HomepageComponent implements OnInit {
 
-  @ViewChild('service1', { static: false }) service1
-  @ViewChild('service2', { static: false }) service2
-  @ViewChild('service3', { static: false }) service3
   counters = {
     a: 5,
     b: 15000,
@@ -20,6 +17,16 @@ export class HomepageComponent implements OnInit {
     a: false,
     b: false,
     c: false
+  }
+  cwServices = {
+    a: false,
+    b: false,
+    c: false,
+    d: false,
+    e: false,
+    f: false,
+    g: false,
+    h: false
   }
 
   constructor(
@@ -46,13 +53,23 @@ export class HomepageComponent implements OnInit {
     }
 
     setTimeout(() => {
-      if (type == 'a') {
-        this.service1.nativeElement.scrollIntoView({ behavior: "smooth" });
-      } else if (type == 'b') {
-        this.service2.nativeElement.scrollIntoView({ behavior: "smooth" });
-      } else {
-        this.service3.nativeElement.scrollIntoView({ behavior: "smooth" });
+      service.scrollIntoView({ behavior: "smooth" });
+    }, 200);
+
+  }
+
+  onCWService(type, service: HTMLElement) {
+
+    for (const iterator in this.cwServices) {
+      if (iterator == type) {
+        this.cwServices[type] = !this.cwServices[type]
+        continue
       }
+      this.cwServices[iterator] = false
+    }
+
+    setTimeout(() => {
+      service.scrollIntoView({ behavior: "smooth" });
     }, 200);
 
   }

@@ -82,71 +82,127 @@
         id="service-section-1" #service1>
         <div class="container page bg-light one">
             <h4 class="mb-4">Dropouts content writing</h4>
-            <ngb-accordion [closeOthers]="true" #acc="ngbAccordion">
-                <ngb-panel id="toggle-1" title="Website Content">
-                    <ng-template ngbPanelContent>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <nav id="navi">
+                        <ul>
+                            <li>
+                                <button class="btn-anchor" (click)="onCWService('a',cw1)" type="button"
+                                    data-toggle="collapse" data-target="#page-1" aria-expanded="true"
+                                    aria-controls="page-1">
+                                    Website Content
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn-anchor" (click)="onCWService('b',cw2)" type="button"
+                                    data-toggle="collapse" data-target="#page-2" aria-expanded="true"
+                                    aria-controls="page-2">
+                                    Blogs
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn-anchor" (click)="onCWService('c',cw3)" type="button"
+                                    data-toggle="collapse" data-target="#page-3" aria-expanded="true"
+                                    aria-controls="page-3">
+                                    Press Releases
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn-anchor" (click)="onCWService('d',cw4)" type="button"
+                                    data-toggle="collapse" data-target="#page-4" aria-expanded="true"
+                                    aria-controls="page-4">
+                                    Copywriting
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn-anchor" (click)="onCWService('e',cw5)" type="button"
+                                    data-toggle="collapse" data-target="#page-5" aria-expanded="true"
+                                    aria-controls="page-5">
+                                    Brochures and profiles
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn-anchor" (click)="onCWService('f',cw6)" type="button"
+                                    data-toggle="collapse" data-target="#page-6" aria-expanded="true"
+                                    aria-controls="page-6">
+                                    Academic writing
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn-anchor" (click)="onCWService('g',cw7)" type="button"
+                                    data-toggle="collapse" data-target="#page-7" aria-expanded="true"
+                                    aria-controls="page-7">
+                                    Social media content
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn-anchor" (click)="onCWService('h',cw8)" type="button"
+                                    data-toggle="collapse" data-target="#page-8" aria-expanded="true"
+                                    aria-controls="page-8">
+                                    Screenwriting
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-9">
+                    <div  [ngStyle]="{'display': cwServices.a?'block':'none'}" id="page-1" class="page bg-light one" #cw1>
+                        <h2 class="heading">Website content</h2>
                         <p>Website is the online storefront of your business. If your visitors are clear with what they
                             are getting, your website content is great! We understand the key is simplicity, craft
                             concise content pieces for your website, giving your brand a strong presence.</p>
                         <a href="#query-section" class="btn btn-primary"> Get in touch </a>
-                    </ng-template>
-                </ngb-panel>
-                <ngb-panel id="toggle-2" title="Blogs">
-                    <ng-template ngbPanelContent>
+                    </div>
+                    <div  [ngStyle]="{'display': cwServices.b?'block':'none'}" id="page-2" class="page bg-light two" #cw2>
+                        <h2 class="heading">Blogs</h2>
                         <p>People do not want to be sold anymore, they want to be told. And if your brand is telling
                             them information that will make their lives easier, they will trust you. Our blogs are crisp
                             in nature and have always served their purpose.</p>
                         <a href="#query-section" class="btn btn-primary"> Get in touch </a>
-                    </ng-template>
-                </ngb-panel>
-                <ngb-panel id="toggle-3" title="Press Releases">
-                    <ng-template ngbPanelContent>
+                    </div>
+                    <div  [ngStyle]="{'display': cwServices.c?'block':'none'}" id="page-3" class="page bg-light three" #cw3>
+                        <h2 class="heading">Press Releases</h2>
                         <p>Anything your business wants to tell the world, a good press release will only make your
                             business look authentic and reliable. And we write such good press releases.</p>
                         <a href="#query-section" class="btn btn-primary"> Get in touch </a>
-                    </ng-template>
-                </ngb-panel>
-                <ngb-panel id="toggle-4" title="Copywriting">
-                    <ng-template ngbPanelContent>
+                    </div>
+                    <div  [ngStyle]="{'display': cwServices.d?'block':'none'}" id="page-4" class="page bg-light four" #cw4>
+                        <h2 class="heading">Copywriting</h2>
                         <p>You have very little time to pique the interest of your viewer when it comes to ad copies. A
                             lot has to be told in a short while. With our creative minds in-house, we churn out crunchy
                             ad copies.</p>
                         <a href="#query-section" class="btn btn-primary"> Get in touch </a>
-                    </ng-template>
-                </ngb-panel>
-                <ngb-panel id="toggle-5" title="Brochures and profiles">
-                    <ng-template ngbPanelContent>
+                    </div>
+                    <div  [ngStyle]="{'display': cwServices.e?'block':'none'}" id="page-5" class="page bg-light five" #cw5>
+                        <h2 class="heading">Brochures and Profiles</h2>
                         <p>Business profiles and brochures reveal a great deal of insights on how the brands look and
                             feel. We have an eye for detail when it comes to explaining elaborately what brands stand
                             for and what they do.</p>
                         <a href="#query-section" class="btn btn-primary"> Get in touch </a>
-                    </ng-template>
-                </ngb-panel>
-                <ngb-panel id="toggle-6" title="Academic writing">
-                    <ng-template ngbPanelContent>
+                    </div>
+                    <div  [ngStyle]="{'display': cwServices.f?'block':'none'}" id="page-6" class="page bg-light six" #cw6>
+                        <h2 class="heading">Academic Writing</h2>
                         <p>Being Dropouts ourselves, we totally know how the current education system is outdated and
                             seriously needs an upgrade. With qualified and excelled writers in-house, we write academic
                             content in a way students would love to learn.</p>
                         <a href="#query-section" class="btn btn-primary"> Get in touch </a>
-                    </ng-template>
-                </ngb-panel>
-                <ngb-panel id="toggle-7" title="Social media content">
-                    <ng-template ngbPanelContent>
+                    </div>
+                    <div  [ngStyle]="{'display': cwServices.g?'block':'none'}" id="page-7" class="page bg-light seven" #cw7>
+                        <h2 class="heading">Social Media Content</h2>
                         <p>We are millennial kids, social media has grown with us. We understand what content works on
                             social media and what does not. Brands need to be honest with their audience. We help convey
                             your brand to your audience.</p>
                         <a href="#query-section" class="btn btn-primary"> Get in touch </a>
-                    </ng-template>
-                </ngb-panel>
-                <ngb-panel id="toggle-8" title="Screenwriting">
-                    <ng-template ngbPanelContent>
+                    </div>
+                    <div  [ngStyle]="{'display': cwServices.h?'block':'none'}" id="page-8" class="page bg-light eight" #cw8>
+                        <h2 class="heading">Screenwriting</h2>
                         <p>We have a crew of aspirational movie makers and writers who write scripts that connect with
                             the audience and leave a lasting impression. We can script commercial ads, digital ads,
                             documentaries and pretty much anything you like!</p>
                         <a href="#query-section" class="btn btn-primary"> Get in touch </a>
-                    </ng-template>
-                </ngb-panel>
-            </ngb-accordion>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
