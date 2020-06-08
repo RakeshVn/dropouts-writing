@@ -41,9 +41,7 @@
                         </span>
                         <div class="desc">
                             <h3 class="mb-5">Content Writing</h3>
-                            <button class="btn btn-primary collapseall" type="button" data-toggle="collapse"
-                                data-target="#service-section-1" aria-expanded="true" aria-controls="service-section-1"
-                                (click)="onService(service1)">
+                            <button class="btn btn-primary" type="button" (click)="onService('a',service1)">
                                 Tell me more
                             </button>
                         </div>
@@ -56,9 +54,7 @@
                         </span>
                         <div class="desc">
                             <h3 class="mb-5">Content Marketing</h3>
-                            <button class="btn btn-primary collapseall" type="button" data-toggle="collapse"
-                                data-target="#service-section-2" aria-expanded="true" aria-controls="service-section-2"
-                                (click)="onService(service2)">
+                            <button class="btn btn-primary" type="button" (click)="onService('b',service2)">
                                 Tell me more
                             </button>
                         </div>
@@ -71,9 +67,7 @@
                         </span>
                         <div class="desc">
                             <h3 class="mb-5">StoryHouse</h3>
-                            <button class="btn btn-primary collapseall" type="button" data-toggle="collapse"
-                                data-target="#service-section-3" aria-expanded="true" aria-controls="service-section-3"
-                                (click)="onService(service3)">
+                            <button class="btn btn-primary" type="button" (click)="onService('c',service3)">
                                 Tell me more
                             </button>
                         </div>
@@ -84,7 +78,8 @@
     </section>
 
     <!-- Content Writing -->
-    <section class="collapse main-serv ftco-section ftco-no-pb ftco-no-pt" id="service-section-1" #service1>
+    <section [ngStyle]="{'display': services.a?'block':'none'}" class="main-serv ftco-section ftco-no-pb ftco-no-pt"
+        id="service-section-1" #service1>
         <div class="container page bg-light one">
             <h4 class="mb-4">Dropouts content writing</h4>
             <ngb-accordion [closeOthers]="true" #acc="ngbAccordion">
@@ -156,7 +151,8 @@
     </section>
 
     <!-- Content Marketing -->
-    <section class="collapse main-serv ftco-section ftco-no-pb ftco-no-pt" id="service-section-2" #service2>
+    <section [ngStyle]="{'display': services.b?'block':'none'}" class="main-serv ftco-section ftco-no-pb ftco-no-pt"
+        id="service-section-2" #service2>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -170,7 +166,8 @@
                             communication. </p>
                         <p>Are you a business or a Start-up, we cater to both. We provide well-analyzed content
                             strategies and marketing solutions.</p>
-                        <button class="btn btn-primary" type="button"> Get Free Consultation </button>
+                        <a href="#query-section" class="btn btn-primary"> Get Free Consultation
+                        </a>
                     </div>
                 </div>
             </div>
@@ -178,7 +175,8 @@
     </section>
 
     <!-- StoryHouse -->
-    <section class="collapse main-serv ftco-section ftco-no-pb ftco-no-pt" id="service-section-3" #service3>
+    <section [ngStyle]="{'display': services.c?'block':'none'}" class="main-serv ftco-section ftco-no-pb ftco-no-pt"
+        id="service-section-3" #service3>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -201,9 +199,9 @@
                         <p>Get in touch with us and we will walk you through the easy steps on how you can author a
                             book. And together we shall immortalize your stories and thoughts. The world will know.</p>
 
-                        <button class="btn btn-primary pb-2" type="button">
+                        <a href="#query-section" class="btn btn-primary pb-2">
                             Let’s start my book already!
-                        </button>
+                        </a>
 
                         <!-- Transcriptions -->
                         <section id="books-section" class="mt-4">
