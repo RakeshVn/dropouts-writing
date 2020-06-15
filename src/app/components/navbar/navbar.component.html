@@ -10,16 +10,19 @@
         <div class="collapse navbar-collapse" id="ftco-nav" [ngbCollapse]="isCollapsed">
             <ul class="navbar-nav nav ml-auto">
                 <li class="nav-item"><a routerLink="/" class="nav-link"><span>Home</span></a></li>
-                <li class="nav-item"><a href="#clintele-section" class="nav-link"
+                <li class="nav-item"><a href="#clintele-section" class="nav-link" *ngIf="!isBlog"
                         (click)="onClose()"><span>Clintele</span></a></li>
-                <li class="nav-item"><a href="#our-services" class="nav-link"
+                <li class="nav-item"><a href="#our-services" class="nav-link" *ngIf="!isBlog"
                         (click)="onClose()"><span>Services</span></a></li>
-                <li class="nav-item"><a href="#aboutus-section" class="nav-link" (click)="onClose()"><span>About
+                <li class="nav-item"><a href="#aboutus-section" class="nav-link" *ngIf="!isBlog"
+                        (click)="onClose()"><span>About
                             Us</span></a></li>
-                <li class="nav-item"><a href="#philosophy-section" class="nav-link" (click)="onClose()"><span>Our
+                <li class="nav-item"><a href="#philosophy-section" class="nav-link" *ngIf="!isBlog"
+                        (click)="onClose()"><span>Our
                             Philosophy</span></a>
                 </li>
-                <li class="nav-item"><a routerLink="blog" class="nav-link" target="_blank" (click)="onClose()"><span>Our
+                <li class="nav-item"><a routerLink="blog" class="nav-link" target="_blank" *ngIf="!isBlog"
+                        (click)="onClose()"><span>Our
                             Blog</span></a>
                 </li>
                 <li class="nav-item"><a href="#footer-section" class="nav-link"

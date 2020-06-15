@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit {
   private lastPoppedUrl: string;
   private yScrollStack: number[] = [];
   isLoggedIn = false
+  isBlog = false
 
   constructor(
     private _Router: Router,
@@ -20,10 +21,11 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
+    if (this._Router.url == '/blog') {
+      this.isBlog = true
+    }
     this._Router.events.subscribe((event) => {
       this.isCollapsed = true;
-      console.log('hello')
       if (event instanceof NavigationStart) {
         if (event.url != this.lastPoppedUrl)
           this.yScrollStack.push(window.scrollY);

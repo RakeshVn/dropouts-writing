@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonService } from '../services/common.service';
+import { ActivatedRoute } from '@angular/router';
 declare const $: any
 @Component({
   selector: 'app-homepage',
@@ -28,12 +29,25 @@ export class HomepageComponent implements OnInit {
     g: false,
     h: false
   }
+  @ViewChild('service3', { static: false }) services3: ElementRef
+  @ViewChild('clintele', { static: false }) clintele: ElementRef
 
   constructor(
-    private _CommonService: CommonService
+    private _CommonService: CommonService,
+    private _ActivatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit(): void {
+    this._ActivatedRoute.queryParams.subscribe(params => {
+      if (params.scr && params.scr == 'our-services') {
+        this.services.c = true
+        setTimeout(() => { this.services3.nativeElement.scrollIntoView({ behavior: "smooth" }) }, 200);
+      }
+    })
+
   }
 
   onSubmit(type, formData) {
