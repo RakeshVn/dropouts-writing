@@ -42,7 +42,7 @@ export class HomepageComponent implements OnInit {
 
   ngAfterViewInit(): void {
     this._ActivatedRoute.queryParams.subscribe(params => {
-      if (params.scr && params.scr == 'our-services') {
+      if (params.scr && params.scr == 'story-house') {
         this.services.c = true
         setTimeout(() => { this.services3.nativeElement.scrollIntoView({ behavior: "smooth" }) }, 200);
       }
