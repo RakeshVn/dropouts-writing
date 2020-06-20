@@ -8,7 +8,10 @@ const AuditModel = require('../../models/audit.model')
 const QueryModel = require('../../models/query.model')
 const WriterModel = require('../../models/writer.model')
 
-const CountsModel = require('../../models/counts.model')
+const CountsModel = require('../../models/counts.model');
+const auditModel = require('../../models/audit.model');
+const writerModel = require('../../models/writer.model');
+const queryModel = require('../../models/query.model');
 
 controller.get = async function (req, res) {
 
@@ -296,6 +299,29 @@ controller.getQuery = async function (req, res) {
         const totalRecords = await QueryModel.countDocuments({})
 
         return res.status(200).send({ message: 'success', data: eventData, totalRecords })
+
+    } catch (error) {
+        console.error(error)
+        return res.status(500).send({ message: 'Internal Server Error' })
+    }
+
+}
+
+controller.deleteEvent = async function (req, res) {
+
+    try {
+
+        const { params } = req
+
+        if (params.type == 'audit') {
+            await auditModel.deleteOne({ _id: params.id })
+        } else if (params.type == 'writer') {
+            await writerModel.deleteOne({ _id: params.id })
+        } else if (params.type == 'query') {
+            await queryModel.deleteOne({ _id: params.id })
+        }
+
+        return res.status(200).send({ message: 'success' })
 
     } catch (error) {
         console.error(error)

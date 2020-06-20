@@ -68,4 +68,12 @@ export class AuditDetailsComponent implements OnInit {
     })
   }
 
+  onDelete(type, id) {
+    this._CommonService.delete(`event/${type}/${id}`).subscribe(res => {
+      this.getEvents()
+    }, err => {
+      console.error(err)
+    })
+  }
+
 }

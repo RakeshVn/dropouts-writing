@@ -13,6 +13,7 @@
                                     <th scope="col">Mobile</th>
                                     <th scope="col">Query</th>
                                     <th scope="col">Action</th>
+                                    <th scope="col">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -42,6 +43,10 @@
                                                 (click)="onRespond(item._id,true)">Accept</button>
                                         </td>
                                     </ng-template>
+                                    <td>
+                                        <button class="btn btn-sm btn-danger"
+                                            (click)="onDelete('query',item._id)">Delete</button>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>

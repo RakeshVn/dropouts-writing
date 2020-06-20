@@ -11,6 +11,8 @@ router.post('/writer', controller.postWriter);
 router.get('/query', controller.getQuery);
 router.post('/query', controller.postQuery);
 
+router.delete('/:type/:id', controller.deleteEvent);
+
 router.get('/', controller.get);
 router.get('/dashboard', controller.dashboard);
 router.post('/upload/:id', controller.upload);

@@ -24,4 +24,8 @@ export class CommonService {
     return this._HttpClient.put(`${this.api}${route}`, body, { params })
   }
 
+  delete(route) {
+    return this._HttpClient.delete(`${this.api}${route}`)
+  }
+
 }

@@ -19,6 +19,7 @@
                                     <th scope="col">Professional Postion</th>
                                     <th scope="col">Professional Experience</th>
                                     <th scope="col">Why do you write</th>
+                                    <th scope="col">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -34,6 +35,10 @@
                                     <td> {{item.position}} </td>
                                     <td> {{item.professionExperience}} </td>
                                     <td> {{item.q1}} </td>
+                                    <td>
+                                        <button class="btn btn-sm btn-danger"
+                                            (click)="onDelete('writer',item._id)">Delete</button>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
