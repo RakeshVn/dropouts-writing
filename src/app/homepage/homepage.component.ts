@@ -31,28 +31,58 @@ export class HomepageComponent implements OnInit {
   }
   @ViewChild('service3', { static: false }) services3: ElementRef
   @ViewChild('clintele', { static: false }) clintele: ElementRef
+  @ViewChild('servicesSection', { static: false }) servicesSection: ElementRef
+
+  isQueryFormSubmitted: Boolean = false
+  isQueryFormSubmittedMessage: Boolean = false
+
+  isAuditFormSubmitted: Boolean = false
+  isAuditFormSubmittedMessage: Boolean = false
+
+  isWriterFormSubmitted: Boolean = false
+  isWriterFormSubmittedMessage: Boolean = false
 
   constructor(
     private _CommonService: CommonService,
     private _ActivatedRoute: ActivatedRoute
-  ) { }
-
-  ngOnInit() {
-  }
-
-  ngAfterViewInit(): void {
-    this._ActivatedRoute.queryParams.subscribe(params => {
+  ) {
+    _ActivatedRoute.queryParams.subscribe(params => {
       if (params.scr && params.scr == 'story-house') {
         this.services.c = true
         setTimeout(() => { this.services3.nativeElement.scrollIntoView({ behavior: "smooth" }) }, 200);
       }
     })
+  }
 
+  ngOnInit() {
   }
 
   onSubmit(type, formData) {
+
+    if (type == 'audit') {
+      this.isAuditFormSubmitted = true
+      this.isAuditFormSubmittedMessage = false
+    } else if (type == 'writer') {
+      this.isWriterFormSubmitted = true
+      this.isWriterFormSubmittedMessage = false
+    } else if (type == 'query') {
+      this.isQueryFormSubmitted = true
+      this.isQueryFormSubmittedMessage = false
+    }
+
     this._CommonService.post(`event/${type}`, formData).subscribe(res => {
-      console.log(res)
+      if (type == 'audit') {
+        this.isAuditFormSubmitted = false
+        this.isAuditFormSubmittedMessage = true
+      } else if (type == 'writer') {
+        this.isWriterFormSubmitted = false
+        this.isWriterFormSubmittedMessage = true
+      } else if (type == 'query') {
+        this.isQueryFormSubmitted = false
+        this.isQueryFormSubmittedMessage = true
+      }
+    }, err => {
+      console.error(err)
     })
   }
 
@@ -67,7 +97,7 @@ export class HomepageComponent implements OnInit {
     }
 
     setTimeout(() => {
-      service.scrollIntoView({ behavior: "smooth" });
+      service.scrollIntoView({ behavior: "smooth", block: 'start' });
     }, 200);
 
   }

@@ -26,7 +26,7 @@
     <app-clintele #clintele></app-clintele>
 
     <!-- Services -->
-    <section class="" id="our-services" #servicesSection>
+    <section class="" id="our-services">
         <div class="container">
             <div class="row justify-content-center py-5 mt-5">
                 <div class="col-md-5 heading-section text-center ">
@@ -41,7 +41,7 @@
                         </span>
                         <div class="desc">
                             <h3 class="mb-5">Content Writing</h3>
-                            <button class="btn btn-primary" type="button" (click)="onService('a',service1)">
+                            <button class="btn btn-primary" type="button" (click)="onService('a',servicesSection)">
                                 Tell me more
                             </button>
                         </div>
@@ -54,20 +54,20 @@
                         </span>
                         <div class="desc">
                             <h3 class="mb-5">Content Marketing</h3>
-                            <button class="btn btn-primary" type="button" (click)="onService('b',service2)">
+                            <button class="btn btn-primary" type="button" (click)="onService('b',servicesSection)">
                                 Tell me more
                             </button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 text-center d-flex ">
+                <div class="col-md-4 text-center d-flex">
                     <div class="services-1 bg-light">
                         <span class="icon">
                             <i class="flaticon-010-idea"></i>
                         </span>
-                        <div class="desc">
+                        <div class="desc" #servicesSection>
                             <h3 class="mb-5">StoryHouse</h3>
-                            <button class="btn btn-primary" type="button" (click)="onService('c',service3)">
+                            <button class="btn btn-primary" type="button" (click)="onService('c',servicesSection)">
                                 Tell me more
                             </button>
                         </div>
@@ -152,7 +152,7 @@
                         <p>Website is the online storefront of your business. If your visitors are clear with what they
                             are getting, your website content is great! We understand the key is simplicity, craft
                             concise content pieces for your website, giving your brand a strong presence.</p>
-                        <a href="#query-section" class="btn btn-primary"> Get in touch </a>
+                        <button class="btn btn-primary" (click)="onService('d',queries)"> Get in touch </button>
                     </div>
                     <div [ngStyle]="{'display': cwServices.b?'block':'none'}" id="page-2" class="page bg-light two"
                         #cw2>
@@ -160,14 +160,14 @@
                         <p>People do not want to be sold anymore, they want to be told. And if your brand is telling
                             them information that will make their lives easier, they will trust you. Our blogs are crisp
                             in nature and have always served their purpose.</p>
-                        <a href="#query-section" class="btn btn-primary"> Get in touch </a>
+                        <button class="btn btn-primary" (click)="onService('d',queries)"> Get in touch </button>
                     </div>
                     <div [ngStyle]="{'display': cwServices.c?'block':'none'}" id="page-3" class="page bg-light three"
                         #cw3>
                         <h2 class="heading">Press Releases</h2>
                         <p>Anything your business wants to tell the world, a good press release will only make your
                             business look authentic and reliable. And we write such good press releases.</p>
-                        <a href="#query-section" class="btn btn-primary"> Get in touch </a>
+                        <button class="btn btn-primary" (click)="onService('d',queries)"> Get in touch </button>
                     </div>
                     <div [ngStyle]="{'display': cwServices.d?'block':'none'}" id="page-4" class="page bg-light four"
                         #cw4>
@@ -175,7 +175,7 @@
                         <p>You have very little time to pique the interest of your viewer when it comes to ad copies. A
                             lot has to be told in a short while. With our creative minds in-house, we churn out crunchy
                             ad copies.</p>
-                        <a href="#query-section" class="btn btn-primary"> Get in touch </a>
+                        <button class="btn btn-primary" (click)="onService('d',queries)"> Get in touch </button>
                     </div>
                     <div [ngStyle]="{'display': cwServices.e?'block':'none'}" id="page-5" class="page bg-light five"
                         #cw5>
@@ -183,7 +183,7 @@
                         <p>Business profiles and brochures reveal a great deal of insights on how the brands look and
                             feel. We have an eye for detail when it comes to explaining elaborately what brands stand
                             for and what they do.</p>
-                        <a href="#query-section" class="btn btn-primary"> Get in touch </a>
+                        <button class="btn btn-primary" (click)="onService('d',queries)"> Get in touch </button>
                     </div>
                     <div [ngStyle]="{'display': cwServices.f?'block':'none'}" id="page-6" class="page bg-light six"
                         #cw6>
@@ -191,7 +191,7 @@
                         <p>Being Dropouts ourselves, we totally know how the current education system is outdated and
                             seriously needs an upgrade. With qualified and excelled writers in-house, we write academic
                             content in a way students would love to learn.</p>
-                        <a href="#query-section" class="btn btn-primary"> Get in touch </a>
+                        <button class="btn btn-primary" (click)="onService('d',queries)"> Get in touch </button>
                     </div>
                     <div [ngStyle]="{'display': cwServices.g?'block':'none'}" id="page-7" class="page bg-light seven"
                         #cw7>
@@ -199,7 +199,7 @@
                         <p>We are millennial kids, social media has grown with us. We understand what content works on
                             social media and what does not. Brands need to be honest with their audience. We help convey
                             your brand to your audience.</p>
-                        <a href="#query-section" class="btn btn-primary"> Get in touch </a>
+                        <button class="btn btn-primary" (click)="onService('d',queries)"> Get in touch </button>
                     </div>
                     <div [ngStyle]="{'display': cwServices.h?'block':'none'}" id="page-8" class="page bg-light eight"
                         #cw8>
@@ -207,7 +207,7 @@
                         <p>We have a crew of aspirational movie makers and writers who write scripts that connect with
                             the audience and leave a lasting impression. We can script commercial ads, digital ads,
                             documentaries and pretty much anything you like!</p>
-                        <a href="#query-section" class="btn btn-primary"> Get in touch </a>
+                        <button class="btn btn-primary" (click)="onService('d',queries)"> Get in touch </button>
                     </div>
                 </div>
             </div>
@@ -466,8 +466,18 @@
                                         <input type="text" class="form-control" name="businessUrl"
                                             placeholder="Businesss URL" ngModel>
                                     </div>
-                                    <div class="form-group">
-                                        <input type="submit" class="btn btn-primary" value="Submit" />
+                                    <div class="form-group row">
+                                        <div class="col-6">
+                                            <p *ngIf="isAuditFormSubmittedMessage">Thank you. We'll get in touch</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <input *ngIf="!isAuditFormSubmitted" type="submit" value="Submit"
+                                                class="btn btn-primary py-3 px-5 pull-right">
+                                            <button *ngIf="isAuditFormSubmitted" type="submit" value="Submit"
+                                                class="btn btn-primary py-3 px-5 pull-right" disabled>
+                                                <i class="fa fa-spinner fa-spin"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -554,8 +564,18 @@
                                         <input type="text" class="form-control" name="q1" placeholder="Why do you write"
                                             ngModel>
                                     </div>
-                                    <div class="form-group">
-                                        <input type="submit" value="Submit" class="btn btn-primary py-3 px-5">
+                                    <div class="form-group row">
+                                        <div class="col-6">
+                                            <p *ngIf="isWriterFormSubmittedMessage">Thank you. We'll get in touch</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <input *ngIf="!isWriterFormSubmitted" type="submit" value="Submit"
+                                                class="btn btn-primary py-3 px-5 pull-right">
+                                            <button *ngIf="isWriterFormSubmitted" type="submit" value="Submit"
+                                                class="btn btn-primary py-3 px-5 pull-right" disabled>
+                                                <i class="fa fa-spinner fa-spin"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -609,7 +629,7 @@
     </div>
 
     <!-- Queries -->
-    <section id="query-section">
+    <section id="query-section" #queries>
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-12">
@@ -630,8 +650,18 @@
                                 <textarea name="query" id="" cols="30" rows="3" class="form-control"
                                     placeholder="What's your query" ngModel></textarea>
                             </div>
-                            <div class="form-group">
-                                <input type="submit" value="Submit" class="btn btn-primary py-3 px-5">
+                            <div class="form-group row">
+                                <div class="col-6">
+                                    <p *ngIf="isQueryFormSubmittedMessage">Thank you. We'll get in touch</p>
+                                </div>
+                                <div class="col-6">
+                                    <input *ngIf="!isQueryFormSubmitted" type="submit" value="Submit"
+                                        class="btn btn-primary py-3 px-5 pull-right">
+                                    <button *ngIf="isQueryFormSubmitted" type="submit" value="Submit"
+                                        class="btn btn-primary py-3 px-5 pull-right" disabled>
+                                        <i class="fa fa-spinner fa-spin"></i>
+                                    </button>
+                                </div>
                             </div>
                         </form>
                     </div>
