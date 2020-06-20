@@ -49,7 +49,7 @@ export class HomepageComponent implements OnInit {
     _ActivatedRoute.queryParams.subscribe(params => {
       if (params.scr && params.scr == 'story-house') {
         this.services.c = true
-        setTimeout(() => { this.services3.nativeElement.scrollIntoView({ behavior: "smooth" }) }, 200);
+        setTimeout(() => { this.servicesSection.nativeElement.scrollIntoView({ behavior: "smooth", block: 'start' }) }, 200);
       }
     })
   }
